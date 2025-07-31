@@ -1,0 +1,624 @@
+/* Estilos Generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1a2a3a; /* Fondo muy oscuro, casi negro-azulado, para un contraste fuerte */
+    color: #e0e0e0; /* Color de texto general claro para buena legibilidad */
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #2c3e50; /* Un gris azulado oscuro para el contenedor principal, contrasta bien con el body */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    border-radius: 12px;
+}
+
+/* Navbar (Menú de Navegación) */
+.navbar {
+    background-color: #1a2a3a; /* Mismo color que el fondo del body para una integración fluida */
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Sombra más fuerte para que el menú resalte */
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff; /* Blanco puro para la marca */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links .nav-item {
+    color: #e0e0e0; /* Gris claro para los enlaces del menú */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links .nav-item:hover {
+    background-color: #4a82c4; /* Un azul vibrante para el hover */
+    color: #fff; /* Blanco para el texto al pasar el ratón */
+}
+
+.nav-links .download-button {
+    background-color: #ff8c00; /* Naranja brillante para el botón de descarga */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff; /* Texto blanco para este botón */
+    padding: 8px 12px; /* Asegura padding consistente */
+}
+
+.nav-links .download-button:hover {
+    background-color: #e57300; /* Tono más oscuro de naranja al pasar el ratón */
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1a2a3a, #34495e); /* Degradado más oscuro y profundo */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.header h1 {
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Sombra de texto más intensa */
+}
+
+.header .job-title {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #a0c4ff; /* Azul claro vibrante para el título de puesto */
+    margin-bottom: 30px;
+}
+
+/* Foto de Perfil */
+.profile-photo-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.4); /* Sombra más visible */
+    position: relative;
+    animation: pulse 2s infinite alternate;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Información de Contacto */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d0e0ff; /* Azul claro para la información de contacto */
+}
+
+.contact-info span i {
+    color: #8bbbe5; /* Tono de azul más claro para iconos */
+}
+
+.contact-info a {
+    color: #8bbbe5; /* Tono de azul más claro para enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Botón de WhatsApp en el Header (si lo mantienes) */
+.whatsapp-button {
+    background-color: #25d366; /* Verde de WhatsApp */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+.whatsapp-button:hover {
+    background-color: #1da851; /* Tono más oscuro de verde al pasar el ratón */
+    transform: translateY(-3px);
+}
+
+.whatsapp-button i {
+    font-size: 1.3em;
+}
+
+/* Secciones de Contenido */
+.section {
+    margin-bottom: 40px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #34495e; /* Mismo color que el contenedor para consistencia */
+    border-left: 6px solid #4a82c4; /* Azul vibrante como acento en el borde */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #f0f0f0; /* Texto claro para las secciones */
+}
+
+.section h2 {
+    color: #a0c4ff; /* Azul claro vibrante para títulos de sección */
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Borde inferior más visible */
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section h2 i {
+    color: #4a82c4; /* Azul vibrante para iconos de título */
+}
+
+/* Experiencia Laboral, Formación, Referencias */
+.experience-item, .education-item, .reference-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #46607f; /* Un tono intermedio de azul grisáceo para los ítems */
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover, .education-item:hover, .reference-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el ratón */
+}
+
+.experience-item h3, .education-item h3, .reference-item h3 {
+    color: #ffffff; /* Blanco puro para subtítulos */
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.4em;
+}
+
+.experience-item .date, .education-item .date {
+    color: #b0d0f0; /* Azul claro para fechas */
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.experience-item ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.experience-item ul li {
+    padding: 5px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #e0e0e0; /* Texto claro para listas */
+}
+
+.experience-item ul li i {
+    color: #28a745; /* Verde brillante para los íconos de check */
+    font-size: 0.9em;
+    margin-top: 4px;
+}
+
+/* Formación Complementaria */
+.complementary-education ul {
+    list-style: none;
+    padding: 0;
+}
+
+.complementary-education ul li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e0e0e0; /* Texto claro para listas */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15); /* Borde más visible */
+}
+
+.complementary-education ul li:last-child {
+    border-bottom: none;
+}
+
+.complementary-education ul li i {
+    color: #ff8c00; /* Naranja brillante para íconos de certificado */
+    font-size: 1.1em;
+}
+
+/* Habilidades */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills-grid span {
+    background-color: #5a7d9b; /* Un azul grisáceo más definido para los badges de habilidad */
+    color: #fff; /* Texto blanco */
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skills-grid span:hover {
+    background-color: #4a82c4; /* Azul vibrante al pasar el ratón */
+    transform: scale(1.05);
+}
+
+.skills-grid span i {
+    color: #b0d0f0; /* Azul claro para iconos de habilidad */
+}
+
+/* Referencias */
+.reference-item p {
+    margin: 5px 0;
+    color: #e0e0e0; /* Texto claro para referencias */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.reference-item p i {
+    color: #3498db; /* Azul estándar para iconos de teléfono */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background-color: #1a2a3a; /* Mismo color que el fondo del body */
+    color: #e0e0e0;
+    font-size: 0.9em;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+---
+## Botones Flotantes (WhatsApp y Volver Arriba)
+---
+
+/* Estilos para el nuevo botón de WhatsApp fijo */
+.whatsapp-fixed-btn {
+    position: fixed;
+    bottom: 80px; /* Ajusta este valor para que esté por encima del botón de "volver arriba" */
+    right: 20px;
+    background-color: #25d366; /* Color de WhatsApp */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Para que sea circular */
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos, incluyendo el botón de subir */
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden; /* Oculto por defecto */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.whatsapp-fixed-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.whatsapp-fixed-btn:hover {
+    transform: scale(1.1); /* Ligeramente más grande al pasar el ratón */
+    background-color: #1da851; /* Tono más oscuro de verde */
+}
+
+
+/* Estilos para el botón de "Volver Arriba" */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px; /* Debajo del botón de WhatsApp */
+    right: 20px;
+    background-color: #4a82c4; /* Azul vibrante, mismo que los enlaces del navbar */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Asegura que esté debajo del botón de WhatsApp */
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden; /* Oculto por defecto */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.scroll-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top-btn:hover {
+    transform: translateY(-3px); /* Pequeño movimiento hacia arriba al pasar el ratón */
+    background-color: #3a68a6; /* Tono más oscuro de azul */
+}
+
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1s; }
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.zoom-in {
+    animation: zoomIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Animación del botón de WhatsApp (existente en el header) */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    /* Navbar Responsiva */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        background-color: #2c3e50; /* Fondo del menú desplegable, contrasta con el body */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        display: none;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+
+    .nav-links.active {
+        display: flex;
+        max-height: 500px; /* Suficiente para todos los elementos */
+    }
+
+    .nav-links li {
+        margin: 0; /* Elimina márgenes laterales en móvil */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        text-align: center;
+    }
+
+    .nav-links .nav-item {
+        display: block;
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Borde más visible */
+        width: auto; /* Permite que el contenido determine el ancho, pero el li ya es 100% */
+    }
+
+    .nav-links li:last-child .nav-item {
+        border-bottom: none;
+    }
+
+    /* Ajustes específicos para el botón de descarga en el menú móvil */
+    .nav-links .download-button {
+        background-color: #ff8c00; /* Asegura el color naranja */
+        color: #fff; /* Asegura el color de texto blanco */
+        margin-top: 10px; /* Un poco de espacio extra */
+        margin-bottom: 10px; /* Un poco de espacio extra */
+        display: inline-flex; /* Para centrarlo si es necesario y mantener el icono */
+        justify-content: center; /* Centra el contenido del botón */
+        align-self: center; /* Centra el botón horizontalmente si el li es flex */
+        width: calc(100% - 40px); /* Ancho para el botón, restando el padding de 20px de cada lado */
+        max-width: 250px; /* Límite para que no se extienda demasiado en tabletas */
+        padding: 10px 15px; /* Ajusta el padding para móviles */
+        font-size: 1em; /* Ajusta el tamaño de fuente */
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .header .job-title {
+        font-size: 1.2em;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+    }
+
+    .skills-grid span {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Ajuste de posición de los botones flotantes en móvil */
+    .scroll-to-top-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-fixed-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px; /* Ajusta el tamaño del icono de WhatsApp */
+        bottom: 75px; /* Ajusta para mantener la separación en pantallas más pequeñas */
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 40px 10px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header .job-title {
+        font-size: 1em;
+    }
+
+    .profile-photo-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    .whatsapp-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .skills-grid span {
+        font-size: 0.8em;
+        padding: 7px 12px;
+    }
+}
