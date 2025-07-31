@@ -1,4 +1,4 @@
-/* Estilos Generales */
+/* --- Estilos Generales y Resets --- */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -19,7 +19,7 @@ body {
     border-radius: 12px;
 }
 
-/* Navbar */
+/* --- Navbar (Menú de Navegación) --- */
 .navbar {
     background-color: #1a2a3a;
     color: #fff;
@@ -37,6 +37,7 @@ body {
     font-size: 1.5em;
     font-weight: 700;
     color: #fff;
+    text-decoration: none;
 }
 
 .nav-links {
@@ -88,7 +89,7 @@ body {
     cursor: pointer;
 }
 
-/* Header */
+/* --- Header / Hero Section --- */
 .header {
     background: linear-gradient(135deg, #1a2a3a, #34495e);
     color: #fff;
@@ -186,6 +187,7 @@ body {
     gap: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
 }
 
 .whatsapp-button:hover {
@@ -197,7 +199,7 @@ body {
     font-size: 1.3em;
 }
 
-/* Secciones de Contenido */
+/* --- Secciones de Contenido (General) --- */
 .section {
     margin-bottom: 40px;
     padding: 25px;
@@ -206,6 +208,7 @@ body {
     border-left: 6px solid #4a82c4;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     color: #f0f0f0;
+    scroll-margin-top: 100px;
 }
 
 .section h2 {
@@ -223,7 +226,12 @@ body {
     color: #4a82c4;
 }
 
-/* Experiencia Laboral, Formación, Referencias */
+.section p,
+.section li {
+    font-size: 1.1em;
+}
+
+/* --- Experiencia Laboral, Formación, Referencias --- */
 .experience-item,
 .education-item,
 .reference-item {
@@ -247,7 +255,7 @@ body {
 .experience-item h3,
 .education-item h3,
 .reference-item h3 {
-    color: #fff;
+    color: #ffffff;
     margin-top: 0;
     margin-bottom: 8px;
     font-size: 1.4em;
@@ -283,7 +291,7 @@ body {
     margin-top: 4px;
 }
 
-/* Formación Complementaria */
+/* --- Formación Complementaria --- */
 .complementary-education ul {
     list-style: none;
     padding: 0;
@@ -307,7 +315,7 @@ body {
     font-size: 1.1em;
 }
 
-/* Habilidades */
+/* --- Habilidades --- */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -336,7 +344,7 @@ body {
     color: #b0d0f0;
 }
 
-/* Referencias */
+/* --- Referencias --- */
 .reference-item p {
     margin: 5px 0;
     color: #e0e0e0;
@@ -349,7 +357,7 @@ body {
     color: #3498db;
 }
 
-/* Footer */
+/* --- Footer --- */
 .footer {
     text-align: center;
     padding: 25px;
@@ -361,9 +369,7 @@ body {
     border-top-right-radius: 50px;
 }
 
-/* Botones Flotantes (WhatsApp y Volver Arriba) */
-
-/* Estilos base para ambos botones flotantes */
+/* --- Botones Flotantes (WhatsApp y Volver Arriba) --- */
 .scroll-to-top-btn,
 .whatsapp-float-btn {
     position: fixed;
@@ -376,14 +382,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    text-decoration: none;
+    
     opacity: 0;
     visibility: hidden;
     transform: translateY(100px);
     transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-/* Botón Volver Arriba */
 .scroll-to-top-btn {
     bottom: 20px;
     right: 20px;
@@ -393,7 +399,6 @@ body {
     z-index: 999;
 }
 
-/* Botón WhatsApp Flotante */
 .whatsapp-float-btn {
     bottom: 80px;
     right: 20px;
@@ -403,7 +408,6 @@ body {
     z-index: 1000;
 }
 
-/* Mostrar botones */
 .scroll-to-top-btn.show,
 .whatsapp-float-btn.show {
     opacity: 1;
@@ -411,7 +415,6 @@ body {
     transform: translateY(0);
 }
 
-/* Hover para ambos botones */
 .scroll-to-top-btn:hover {
     background-color: #3a68a6;
     transform: translateY(-5px);
@@ -422,7 +425,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Animaciones */
+/* --- Animaciones --- */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -456,7 +459,7 @@ body {
     opacity: 0;
 }
 
-/* Animación del botón de WhatsApp (header) */
+/* Animación del botón de WhatsApp (existente en el header) */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -473,14 +476,16 @@ body {
     animation: bounce 2s infinite;
 }
 
+/* Animación de pulsación para la foto de perfil */
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
     70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
     100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
-/* Media Queries */
+/* --- Media Queries para Responsividad --- */
 @media (max-width: 768px) {
+    /* Navbar Responsiva */
     .menu-toggle {
         display: block;
     }
@@ -512,29 +517,27 @@ body {
     }
 
     .nav-links .nav-item {
-        display: block;
+        display: block; 
         padding: 12px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        width: auto;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+        width: auto; 
     }
 
     .nav-links li:last-child .nav-item {
-        border-bottom: none;
+        border-bottom: none; 
     }
 
+    /* Ajustes específicos para el botón de descarga en el menú móvil */
     .nav-links .download-button {
-        background-color: #ff8c00;
-        color: #fff;
-        margin: 10px 0;
-        display: inline-flex;
-        justify-content: center;
-        align-self: center;
-        width: calc(100% - 40px);
-        max-width: 250px;
-        padding: 10px 15px;
-        font-size: 1em;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+        background-color: #ff8c00; 
+        color: #fff; 
+        margin: 10px auto;
+        display: inline-flex; 
+        justify-content: center; 
+        width: calc(100% - 40px); 
+        max-width: 250px; 
+        padding: 10px 15px; 
+        font-size: 1em; 
     }
 
     .header h1 {
@@ -546,12 +549,12 @@ body {
     }
 
     .contact-info {
-        flex-direction: column;
+        flex-direction: column; 
         gap: 10px;
     }
 
     .container {
-        margin: 20px 10px;
+        margin: 20px 10px; 
         padding: 15px;
     }
 
@@ -564,6 +567,7 @@ body {
         font-size: 0.9em;
     }
 
+    /* Ajuste de posición y tamaño de los botones flotantes en móvil */
     .scroll-to-top-btn {
         width: 45px;
         height: 45px;
@@ -575,7 +579,7 @@ body {
     .whatsapp-float-btn {
         width: 45px;
         height: 45px;
-        font-size: 22px;
+        font-size: 22px; 
         bottom: 75px;
         right: 20px;
     }
