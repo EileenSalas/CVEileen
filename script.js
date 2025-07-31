@@ -1,26 +1,30 @@
-// Envuelve todo el código DOM en DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     // Función para enviar mensaje de WhatsApp
     function sendWhatsAppMessage() {
-        const phoneNumber = '573043981607';
-        const message = encodeURIComponent('Hola Eileen, vi tu hoja de vida en línea y me gustaría saber más.');
+        const phoneNumber = '573043981607'; 
+        const message = encodeURIComponent(
+            "👋 ¡Hola Eileen! 😊\n\nVi tu hoja de vida en línea 📄 y me gustaría saber más sobre tu perfil como Auxiliar Contable 💼.\n\n¿Podemos conversar? 🤝"
+        );
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
         window.open(whatsappURL, '_blank');
     }
 
-    // Lógica para el botón de "Volver Arriba"
+    // Lógica para el botón de "Volver Arriba" y el botón de WhatsApp flotante
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    const whatsappFloatBtn = document.getElementById('whatsappFloatBtn');
+    const scrollThreshold = 300; // Aparecerá después de 300px de scroll
 
-    // Asegúrate de que el botón exista antes de intentar añadirle eventos
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > scrollThreshold) {
+            scrollToTopBtn.classList.add('show');
+            whatsappFloatBtn.classList.add('show'); 
+        } else {
+            scrollToTopBtn.classList.remove('show');
+            whatsappFloatBtn.classList.remove('show'); 
+        }
+    });
+
     if (scrollToTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.classList.add('show');
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
-        });
-
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -29,18 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    window.sendWhatsAppMessage = sendWhatsAppMessage;
 
     // Lógica para el menú de navegación interactivo
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links .nav-item');
 
-    if (menuToggle && navLinks) { // Verificar si los elementos existen
+    if (menuToggle && navLinks) { 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Cierra el menú cuando se hace clic en un enlace (útil en móvil)
+        // Cierra el menú cuando se hace clic en un enlace
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -52,12 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para descargar el CV
     const downloadCvBtn = document.getElementById('downloadCvBtn');
-    if (downloadCvBtn) { // Asegúrate de que el botón exista
-        downloadCvBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.open('Eileen_Salas_CV.pdf', '_blank');
-        });
-    }
+if (downloadCvBtn) {
+    downloadCvBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const link = document.createElement('a');
+        link.href = 'Eileen_Salas_CV.pdf';  
+        link.download = 'Eileen_Salas_CV.pdf';  
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+}
 
     // Observador de Intersección para animaciones al hacer scroll
     const sections = document.querySelectorAll('.section');
@@ -84,8 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
-
-    // Asegúrate de que la función de WhatsApp esté globalmente disponible si se llama desde onclick en HTML
-    window.sendWhatsAppMessage = sendWhatsAppMessage;
-
 });
