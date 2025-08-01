@@ -1,4 +1,4 @@
-/* --- Estilos Generales y Resets --- */
+/* --- Estilos Generales y Partículas --- */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -12,12 +12,10 @@ body {
     z-index: 1;
 }
 
-/* Estilos para el fondo de partículas */
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
-    /* background shorthand for color, image, repeat, size, position */
     background: #1a2a3a url('') no-repeat cover 50% 50%;
     z-index: 0;
     top: 0;
@@ -35,7 +33,7 @@ body {
     z-index: 2;
 }
 
-/* Ajusta los backgrounds de otras secciones para que se vea el fondo animado */
+/* --- Encabezado Principal --- */
 .header {
     background: linear-gradient(135deg, rgba(26, 42, 58, 0.9), rgba(52, 73, 94, 0.9));
     color: #fff;
@@ -43,53 +41,25 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
-    /* Shorthand for border-bottom-left-radius and border-bottom-right-radius */
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     z-index: 2;
 }
 
+/* --- Barra de Navegación (Navbar) --- */
 .navbar {
     background-color: rgba(26, 42, 58, 0.9);
     color: #fff;
-    padding: 15px 20px;
+    padding: 20px 20px; 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-.section {
-    margin-bottom: 40px;
-    padding: 25px;
-    border-radius: 10px;
-    background-color: rgba(52, 73, 94, 0.9);
-    border-left: 6px solid #4a82c4;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    color: #f0f0f0;
-    scroll-margin-top: 100px;
-    position: relative;
-    z-index: 2;
-}
-
-.footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    background-color: rgba(26, 42, 58, 0.9);
-    color: #e0e0e0;
-    font-size: 0.9em;
-    /* Shorthand for border-top-left-radius and border-top-right-radius */
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    position: relative;
-    z-index: 2;
-}
-
-/* --- Navbar (Menú de Navegación) --- */
 .navbar-brand {
     font-size: 1.5em;
     font-weight: 700;
@@ -102,6 +72,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 .nav-links li {
@@ -131,6 +102,7 @@ body {
     padding: 8px 12px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    margin-left: 25px; 
 }
 
 .nav-links .download-button:hover {
@@ -146,7 +118,41 @@ body {
     cursor: pointer;
 }
 
-/* --- Header / Hero Section --- */
+/* --- Secciones de Contenido (General) --- */
+.section {
+    margin-bottom: 40px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: rgba(52, 73, 94, 0.9);
+    border-left: 6px solid #4a82c4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #f0f0f0;
+    scroll-margin-top: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.section h2 {
+    color: #a0c4ff;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section h2 i {
+    color: #4a82c4;
+}
+
+.section p,
+.section li {
+    font-size: 1.1em;
+}
+
+/* --- Contenido del Encabezado --- */
 .header-content {
     position: relative;
     z-index: 2;
@@ -167,7 +173,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* Foto de Perfil */
+/* --- Foto de Perfil --- */
 .profile-photo-container {
     width: 180px;
     height: 180px;
@@ -175,7 +181,6 @@ body {
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid #fff;
-    /* Combine box-shadow for clarity */
     box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.4);
     position: relative;
     animation: pulse 2s infinite alternate;
@@ -188,7 +193,7 @@ body {
     display: block;
 }
 
-/* Información de Contacto */
+/* --- Información de Contacto --- */
 .contact-info {
     display: flex;
     flex-wrap: wrap;
@@ -220,7 +225,7 @@ body {
     text-decoration: underline;
 }
 
-/* Botón de WhatsApp en el Header */
+/* --- Botón de WhatsApp en Header --- */
 .whatsapp-button {
     background-color: #25d366;
     color: #fff;
@@ -246,29 +251,7 @@ body {
     font-size: 1.3em;
 }
 
-/* --- Secciones de Contenido (General) --- */
-.section h2 {
-    color: #a0c4ff;
-    font-size: 2em;
-    margin-bottom: 20px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.section h2 i {
-    color: #4a82c4;
-}
-
-.section p,
-.section li {
-    font-size: 1.1em;
-}
-
-/* --- Experiencia Laboral, Formación, Referencias --- */
-/* Grouped selectors for shared styles */
+/* --- Items de Experiencia, Educación, Referencia --- */
 .experience-item,
 .education-item,
 .reference-item {
@@ -289,7 +272,6 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Grouped selectors for shared styles */
 .experience-item h3,
 .education-item h3,
 .reference-item h3 {
@@ -299,7 +281,6 @@ body {
     font-size: 1.4em;
 }
 
-/* Grouped selectors for shared styles */
 .experience-item .date,
 .education-item .date {
     color: #b0d0f0;
@@ -417,15 +398,28 @@ body {
     color: #3498db;
     flex-shrink: 0;
     margin-top: 0;
-    margin-right: 0; 
+    margin-right: 0;
     margin-bottom: 0;
 }
 
 /* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background-color: rgba(26, 42, 58, 0.9);
+    color: #e0e0e0;
+    font-size: 0.9em;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: relative;
+    z-index: 2;
+}
 
-/* --- Botones Flotantes (WhatsApp y Volver Arriba) --- */
+/* --- Botones Flotantes --- */
 .scroll-to-top-btn,
-.whatsapp-float-btn {
+.whatsapp-float-btn,
+.download-cv-float-btn {
     position: fixed;
     border: none;
     border-radius: 50%;
@@ -461,8 +455,18 @@ body {
     z-index: 1000;
 }
 
+.download-cv-float-btn {
+    bottom: 140px;
+    right: 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    font-size: 1.5em;
+    z-index: 998;
+}
+
 .scroll-to-top-btn.show,
-.whatsapp-float-btn.show {
+.whatsapp-float-btn.show,
+.download-cv-float-btn.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -478,64 +482,24 @@ body {
     transform: scale(1.1);
 }
 
-/* --- Animaciones --- */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.download-cv-float-btn:hover {
+    background-color: #e57300;
+    transform: scale(1.1);
 }
 
-.fade-in {
-    animation: fadeIn 1s ease-out forwards;
+/* --- Animaciones de Sección al Scroll --- */
+.animated-section {
     opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.delay-1 {
-    animation-delay: 0.5s;
+.animated-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.delay-2 {
-    animation-delay: 1s;
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.zoom-in {
-    animation: zoomIn 0.8s ease-out forwards;
-    opacity: 0;
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-    opacity: 0;
-}
-
-/* Animación del botón de WhatsApp (existente en el header) */
+/* --- Keyframes de Animaciones --- */
 @keyframes bounce {
     0%,
     20%,
@@ -556,7 +520,6 @@ body {
     animation: bounce 2s infinite;
 }
 
-/* Animación de pulsación para la foto de perfil */
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
@@ -569,9 +532,8 @@ body {
     }
 }
 
-/* --- Media Queries para Responsividad --- */
+/* --- Media Queries (Responsividad) --- */
 @media (max-width: 768px) {
-    /* Navbar Responsiva */
     .menu-toggle {
         display: block;
     }
@@ -613,7 +575,6 @@ body {
         border-bottom: none;
     }
 
-    /* Ajustes específicos para el botón de descarga en el menú móvil */
     .nav-links .download-button {
         background-color: #ff8c00;
         color: #fff;
@@ -648,7 +609,6 @@ body {
         font-size: 1.8em;
     }
 
-    /* Ajustes para los badges de habilidades en pantallas medianas */
     .skills-grid {
         justify-content: flex-start;
         gap: 10px;
@@ -664,7 +624,6 @@ body {
         box-sizing: border-box;
     }
 
-    /* Ajuste de posición y tamaño de los botones flotantes en móvil */
     .scroll-to-top-btn {
         width: 45px;
         height: 45px;
@@ -678,6 +637,14 @@ body {
         height: 45px;
         font-size: 22px;
         bottom: 75px;
+        right: 20px;
+    }
+
+    .download-cv-float-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3em;
+        bottom: 130px;
         right: 20px;
     }
 }
@@ -713,7 +680,6 @@ body {
         font-size: 1em;
     }
 
-    /* Ajustes adicionales para los badges en pantallas muy pequeñas */
     .skills-grid {
         gap: 8px;
         justify-content: flex-start;
@@ -728,7 +694,6 @@ body {
         box-sizing: border-box;
     }
 
-    /* Ajustes específicos para referencias laborales */
     .reference-item p {
         font-size: 0.95em;
         flex-wrap: wrap;
@@ -741,5 +706,29 @@ body {
         margin-right: 5px;
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    .scroll-to-top-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-float-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 65px;
+        right: 15px;
+    }
+
+    .download-cv-float-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+        bottom: 115px;
+        right: 15px;
     }
 }
