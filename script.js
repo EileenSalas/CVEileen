@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Función para enviar mensaje de WhatsApp
     function sendWhatsAppMessage() {
-        const phoneNumber = '573043981607'; 
+        const phoneNumber = '573043981607';
         const message = encodeURIComponent(
             "👋 ¡Hola Eileen! 😊\n\nVi tu hoja de vida en línea 📄 y me gustaría saber más sobre tu perfil como Auxiliar Contable 💼.\n\n¿Podemos conversar? 🤝"
         );
@@ -9,18 +9,25 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(whatsappURL, '_blank');
     }
 
-    // Lógica para el botón de "Volver Arriba" y el botón de WhatsApp flotante
+    // Lógica para el botón de "Volver Arriba" y los botones flotantes
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     const whatsappFloatBtn = document.getElementById('whatsappFloatBtn');
-    const scrollThreshold = 300; 
+    const downloadCvFloatBtn = document.getElementById('downloadCvFloatBtn'); 
+    const scrollThreshold = 300;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > scrollThreshold) {
             scrollToTopBtn.classList.add('show');
-            whatsappFloatBtn.classList.add('show'); 
+            whatsappFloatBtn.classList.add('show');
+            if (downloadCvFloatBtn) { 
+                downloadCvFloatBtn.classList.add('show'); 
+            }
         } else {
             scrollToTopBtn.classList.remove('show');
-            whatsappFloatBtn.classList.remove('show'); 
+            whatsappFloatBtn.classList.remove('show');
+            if (downloadCvFloatBtn) { 
+                downloadCvFloatBtn.classList.remove('show'); 
+            }
         }
     });
 
@@ -33,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Exportar la función sendWhatsAppMessage al ámbito global para que los onclick funcionen
     window.sendWhatsAppMessage = sendWhatsAppMessage;
 
     // Lógica para el menú de navegación interactivo
@@ -40,12 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links .nav-item');
 
-    if (menuToggle && navLinks) { 
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Cierra el menú cuando se hace clic en un enlace
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -55,22 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Función para descargar el CV
+    // Función para descargar el CV (desde el menú de navegación)
     const downloadCvBtn = document.getElementById('downloadCvBtn');
     if (downloadCvBtn) {
         downloadCvBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault(); 
             const link = document.createElement('a');
-            link.href = 'Eileen_Salas_CV.pdf';  
-            link.download = 'Eileen_Salas_CV.pdf';  
+            link.href = 'Eileen_Salas_CV.pdf';
+            link.download = 'Eileen_Salas_CV.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         });
     }
-
-    // Observador de Intersección para animaciones al hacer scroll
-    const sections = document.querySelectorAll('.section');
+    
+    // Lógica de animaciones al hacer scroll con Intersection Observer
+    const sectionsToAnimate = document.querySelectorAll('.section');
 
     const observerOptions = {
         root: null,
@@ -78,38 +85,40 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1
     };
 
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                if (entry.target.classList.contains('zoom-in')) {
-                    entry.target.style.animation = 'zoomIn 0.8s ease-out forwards';
-                } else if (entry.target.classList.contains('slide-up')) {
-                    entry.target.style.animation = 'slideUp 0.8s ease-out forwards';
-                }
-                observer.unobserve(entry.target);
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible'); 
             }
         });
     }, observerOptions);
 
-    sections.forEach(section => {
+    sectionsToAnimate.forEach(section => {
+        section.classList.add('animated-section');
         sectionObserver.observe(section);
     });
+    document.querySelector('.header h1').classList.add('visible');
+    document.querySelector('.header .job-title').classList.add('visible');
+    document.querySelector('.contact-info').classList.add('visible');
+    
 
-    // --- Configuración de Particles.js ---
+    // Configuración de Particles.js
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 80, 
+                value: 80,
                 density: {
                     enable: true,
                     value_area: 800
                 }
             },
             color: {
-                value: "#4a82c4" 
+                value: "#4a82c4"
             },
             shape: {
-                type: "circle", 
+                type: "circle",
                 stroke: {
                     width: 0,
                     color: "#000000"
@@ -119,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             },
             opacity: {
-                value: 0.5, 
+                value: 0.5,
                 random: false,
                 anim: {
                     enable: false,
@@ -129,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             },
             size: {
-                value: 3, 
+                value: 3,
                 random: true,
                 anim: {
                     enable: false,
@@ -140,14 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             line_linked: {
                 enable: true,
-                distance: 150, 
-                color: "#8bbbe5", 
+                distance: 150,
+                color: "#8bbbe5",
                 opacity: 0.4,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 2, 
+                speed: 2,
                 direction: "none",
                 random: false,
                 straight: false,
@@ -165,11 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
             events: {
                 onhover: {
                     enable: true,
-                    mode: "grab" 
+                    mode: "grab"
                 },
                 onclick: {
                     enable: true,
-                    mode: "push" 
+                    mode: "push"
                 },
                 resize: true
             },
